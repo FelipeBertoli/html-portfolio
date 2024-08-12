@@ -1,0 +1,103 @@
+.article {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 3rem 0;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    width: 70%;
+
+}
+
+.title {
+    color: aqua;
+    font-size: 5rem;
+    text-align: left;
+    text-shadow: 2px 1px 2px rgb(0, 255, 255);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; 
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-title {
+    padding-bottom: .5rem;
+}
+
+.carousel-title h2 {
+    border-bottom: 2px solid aqua;
+    padding-bottom: .5rem;
+}
+
+.carousel-content {
+    display: flex;
+    height: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    padding: 10rem 4rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    height: 1.7rem;
+    width: 1.7rem;
+    padding: 0;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.left {
+    left: 10px;
+}
+
+.right {
+    right: 10px;
+}
+
+@media (min-width: 600px) {
+    .carousel-item {
+        flex: 0 0 33.3333%;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        width: 80%;
+    }
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .carousel-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

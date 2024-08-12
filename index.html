@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="menu-title">
+            <h1>FELIPE BERTOLI <b>.DEV</b></h1>
+        </div>
+        <div class="menu-details">
+            <a href="./index.html" id='selected'><span class="menu-item">Início</span></a>
+            <a href="./projects.html"><span class="menu-item">Portfólio</span></a>
+            <a href="./about.html"><span class="menu-item">Sobre mim</span></a>
+        </div>
+        <div class="menu-links">
+            <a href="https://wa.me/5543984331545" target="_blank"><i class="fi fi-brands-whatsapp"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=felipebertolioliveira@gmail.com" target="_blank"><i
+                    class="fi fi-rr-envelope"></i></a>
+            <a href="http://www.linkedin.com/in/felipebertoli" target="_blank"><i class="fi fi-brands-linkedin"></i></a>
+            <a href="https://github.com/FelipeBertoli" target="_blank"><i class="fi fi-brands-github"></i></a>
+        </div>
+    </div>
+    <div class="article">
+        <div class="welcome-title">
+            <h1 id="typing-text"></h1>
+        </div>
+        <div class="welcome-subtitle">
+            <b>[</b>
+            <p>Graduando em Ciência da Computação </p>
+            <b>]</b>
+        </div>
+        <div class="welcome-subtitle">
+            <b>[</b>
+            <p>Aspirante à Desenvolvedor </p>
+            <span id="roleText"></span>
+            <b>]</b>
+        </div>
+        <div class="button-container"><a><button>MEUS PROJETOS</button></a></div>
+    </div>
+</body>
+<script>
+    let textWelcome = "Bem vindo! Meu nome é ";
+    let roles = ['Web', 'Full-Stack', 'Java', 'Mobile', 'de Jogos', 'Laravel', 'React'];
+    let itemAtual = '';
+    let indiceAtual = 0;
+    let cssClass = '';
+
+    function atualizarValor() {
+        cssClass = 'welcome-subtitle-span';
+        let randomIndex = Math.floor(Math.random() * roles.length);
+        itemAtual = roles[randomIndex];
+
+        document.getElementById('roleText').textContent = itemAtual;
+
+        setTimeout(atualizarValor, 7000);
+    }
+
+    atualizarValor();
+
+    const text = "Bem-vindo! Meu nome é Felipe Bertoli";
+    const speed = 100; 
+
+    const element = document.getElementById('typing-text');
+
+
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        } 
+    }
+
+    type();
+</script>
+
+</html>
